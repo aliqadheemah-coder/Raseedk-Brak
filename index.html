@@ -1,181 +1,140 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>رصيدك – مندوب براك الشاطئ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رصيدك – مندوب براك الشاطئ</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+<style>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: "Cairo", sans-serif;
-            background: linear-gradient(135deg, #93278f, #ef8fb6);
-            overflow-x: hidden;
-        }
+/* خلفية الصفحة */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Tajawal", sans-serif;
+    background: linear-gradient(135deg, #c84ecf, #8d3bbd, #6c1fa3);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .page {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 50px 60px;
-            gap: 40px;
-        }
+/* المربع الأبيض */
+.container {
+    width: 430px;
+    background: white;
+    padding: 40px 35px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 10;
+}
 
-        /* الماكينة يسار */
-        .device-container {
-            width: 30%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.14);
-            padding: 25px;
-            border-radius: 22px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-            animation: slideIn 1s ease-out;
-        }
-        .device {
-            width: 90%;
-            max-width: 440px;
-        }
+/* شعار رصيدك */
+.logo img {
+    width: 185px; /* تكبير الشعار */
+    display: block;
+    margin: 0 auto 10px auto;
+}
 
-        @keyframes slideIn {
-            from {opacity: 0; transform: translateX(-40px);}
-            to {opacity: 1; transform: translateX(0);}
-        }
+/* العنوان */
+.title {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #1d1646;
+}
 
-        /* البطاقة البيضاء */
-        .card {
-            width: 38%;
-            background: #fff;
-            padding: 45px 45px 35px;
-            border-radius: 22px;
-            text-align: center;
-            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
-            animation: fadeIn 1s ease-out;
-        }
+/* النص */
+.desc {
+    text-align: center;
+    font-size: 17px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
 
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
+/* الأزرار */
+.btn {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #111;
+    transition: 0.20s ease-in-out;
+}
 
-        .logo {
-            width: 220px;
-            margin-bottom: 18px;
-        }
+.btn:hover {
+    transform: translateY(-3px);
+}
 
-        h1 {
-            font-size: 28px;
-            font-weight: 800;
-            color: #1b1648;
-            margin-bottom: 18px;
-        }
+.btn-facebook { background: #fff100; }
+.btn-whatsapp { background: #35c0e5; color: white; }
+.btn-sunmi { background: #c23ba9; color: white; }
 
-        .desc {
-            font-size: 17px;
-            color: #444;
-            line-height: 1.9;
-            margin-bottom: 32px;
-        }
+/* نص الحقوق */
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+    color: #777;
+}
 
-        /* الأزرار */
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            border-radius: 16px;
-            font-size: 17px;
-            margin-bottom: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.18s;
-        }
-        .btn:hover {transform: translateY(-3px);}
+/* الماكينة */
+.machine {
+    position: absolute;
+    right: -210px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-        .yellow {background:#ffee02; color:#000;}
-        .blue {background:#27c2e7; color:#fff;}
-        .purple {background:#c63fa4; color:#fff;}
+.machine img {
+    width: 270px; /* تصغير الماكينة بنسبة مناسبة */
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.25));
+}
 
-        .footer {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #666;
-        }
-
-        /* الشعارات يمين */
-        .logos {
-            width: 18%;
-            display: flex;
-            justify-content: space-between;
-            animation: fadeUp 1s ease-out;
-        }
-
-        @keyframes fadeUp {
-            from {opacity:0; transform:translateY(30px);}
-            to {opacity:1; transform:translateY(0);}
-        }
-
-        .col img {
-            width: 110px;
-            margin: 14px 0;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.18));
-        }
-
-        /* موبايل */
-        @media (max-width: 900px) {
-            .page {flex-direction: column; text-align: center;}
-            .device-container, .logos {display: none;}
-            .card {width: 90%;}
-        }
-    </style>
+</style>
 </head>
 
 <body>
 
-    <div class="page">
+<!-- المربع الأبيض -->
+<div class="container">
 
-        <!-- الماكينة يسار -->
-        <div class="device-container">
-            <img src="device.png" class="device">
-        </div>
-
-        <!-- المربع الأبيض -->
-        <div class="card">
-            <img src="logo.png" class="logo">
-
-            <h1>رصيدك – مندوب براك الشاطئ</h1>
-
-            <p class="desc">
-                فعّل خدمتك، احصل على جهازك، واستمتع بخدمات شحن يومية ودعم فني متواصل،
-                ووفر لزبائنك كروتاً محلية ودولية بجميع فئاتها بطريقة احترافية…
-                عبر مندوب رصيدك داخل براك الشاطئ.
-            </p>
-
-            <a href="#" class="btn yellow">زيارة صفحة فيسبوك</a>
-            <a href="#" class="btn blue">التواصل عبر واتساب</a>
-            <a href="#" class="btn purple">طلب ماكينة SUNMI</a>
-
-            <p class="footer">Ersal Telecom © 2025 – رصيدك</p>
-        </div>
-
-        <!-- الشعارات عمودين يمين -->
-        <div class="logos">
-            <div class="col">
-                <img src="apple.png">
-                <img src="pubg.png">
-                <img src="tether.png">
-            </div>
-            <div class="col">
-                <img src="almadar.png">
-                <img src="libyana.png">
-                <img src="ltt.png">
-            </div>
-        </div>
-
+    <!-- شعار رصيدك -->
+    <div class="logo">
+        <img src="logo.png">
     </div>
+
+    <div class="title">
+        رصيدك – مندوب براك الشاطئ
+    </div>
+
+    <div class="desc">
+        فعّل خدمتك، احصل على جهازك، واستمتع بخدمات شحن يومية ودعم فني متواصل،
+        ووفّر لزبائنك كروتًا محلية ودولية بجميع فئاتها بطريقة احترافية…
+        عبر مندوب رصيدك داخل براك الشاطئ.
+    </div>
+
+    <a class="btn btn-facebook" href="#" target="_blank">زيارة صفحة فيسبوك</a>
+    <a class="btn btn-whatsapp" href="#" target="_blank">التواصل عبر واتساب</a>
+    <a class="btn btn-sunmi" href="#" target="_blank">طلب ماكينة SUNMI</a>
+
+    <div class="footer">
+        Ersal Telecom 2025 – رصيدك ©
+    </div>
+
+</div>
+
+<!-- الماكينة على اليمين -->
+<div class="machine">
+    <img src="machine.png">
+</div>
 
 </body>
 </html>
