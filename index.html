@@ -12,31 +12,49 @@
         body {
             margin: 0;
             font-family: 'Cairo', sans-serif;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
 
-            /* 🎨 خلفية قوية وواضحة */
-            background: radial-gradient(circle at top right, #b14593, #010536 70%);
-            min-height: 100vh;
-
+        /* القسم اليسار */
+        .left-side {
+            width: 50%;
+            background: #ffffff;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 25px;
-            overflow-x: hidden;
         }
 
-        /* صندوق المحتوى */
+        /* صورة الماكينة */
+        .device {
+            width: 420px;
+            position: absolute;
+            transform: translateY(0px);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* القسم اليمين */
+        .right-side {
+            width: 50%;
+            background: radial-gradient(circle at top right, #b14593, #010536 70%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        /* مربع المحتوى */
         .card {
-            background: rgba(255,255,255,0.94);
-            backdrop-filter: blur(8px);
-            width: 520px;
+            background: rgba(255,255,255,0.93);
+            backdrop-filter: blur(6px);
             padding: 50px 45px;
             border-radius: 28px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-
-            position: relative;
-            z-index: 3;
-
-            animation: fadeIn 1s ease-out;
+            width: 450px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            animation: slideUp 1s ease-out;
         }
 
         @keyframes fadeIn {
@@ -44,53 +62,40 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* 🟣 زيادة حجم الشعار بوضوح */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* الشعار */
         .logo {
-            width: 340px;
-            margin-bottom: 5px;
-        }
-
-        /* 🔵 الجهاز بعيد بوضوح */
-        .device {
-            position: absolute;
-            right: -420px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 420px;
-
-            animation: slideIn 1.2s ease-out forwards;
-            opacity: 0;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(-50%) translateX(100px); }
-            to   { opacity: 1; transform: translateY(-50%) translateX(0); }
+            width: 280px;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 30px;
+            font-size: 28px;
             color: #010536;
             margin-bottom: 18px;
         }
 
         p {
-            font-size: 17px;
-            line-height: 1.7;
+            font-size: 16px;
             color: #333;
             margin-bottom: 35px;
+            line-height: 1.8;
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 17px;
+            padding: 16px;
             border-radius: 50px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 18px;
             font-weight: 700;
             text-decoration: none;
             transition: 0.2s;
-            text-align: center;
         }
 
         .fb { background: #f1f10d; color: #010536; }
@@ -99,20 +104,23 @@
 
         .btn:hover {
             transform: translateY(-4px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+            box-shadow: 0 5px 14px rgba(0,0,0,0.25);
         }
 
         footer {
             margin-top: 20px;
             font-size: 13px;
             color: #777;
+            text-align: center;
         }
 
-        /* نسخة الموبايل */
-        @media (max-width: 750px) {
-            .device { display: none; }
-            .card { width: 92%; padding: 40px 25px; }
-            .logo { width: 260px; }
+        /* الموبايل */
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            .left-side { display: none; }
+            .right-side { width: 100%; }
+            .card { width: 90%; }
+            .logo { width: 230px; }
         }
 
     </style>
@@ -120,13 +128,14 @@
 
 <body>
 
-    <div class="container">
-
-        <!-- الجهاز -->
+    <!-- الجهة اليسرى -->
+    <div class="left-side">
         <img class="device"
              src="https://raw.githubusercontent.com/aliqadheemah-coder/Raseedk-Brak/main/device.png">
+    </div>
 
-        <!-- محتوى الصندوق -->
+    <!-- الجهة اليمنى -->
+    <div class="right-side">
         <div class="card">
 
             <img class="logo"
@@ -135,7 +144,7 @@
             <h1>رصيدك – مندوب براك الشاطئ</h1>
 
             <p>
-                الخدمة الرسمية لتفعيل رصيدك وتوفير أجهزة SUNMI وخدمات الشحن اليومي،
+                الخدمة الرسمية لتفعيل رصيدك وتوفير أجهزة SUNMI وخدمات الشحن اليومي،  
                 مع متابعة مستمرة ودعم فني للمحال التجارية داخل براك الشاطئ.
             </p>
 
@@ -149,4 +158,4 @@
 
 </body>
 </html>
-ٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌ
+ٌ
