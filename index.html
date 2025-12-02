@@ -32,7 +32,7 @@ body {
 
 /* تكبير الشعار */
 .logo img {
-    width: 200px; /* تكبير الشعار */
+    width: 200px; /* حجم الشعار */
     display: block;
     margin: 0 auto 12px auto;
 }
@@ -84,19 +84,20 @@ body {
     color: #777;
 }
 
-/* الماكينة على اليمين */
+/* الماكينة على اليمين – معدَّلة باش ما تهربش برا الشاشة */
 .machine {
     position: absolute;
-    right: -210px;
+    right: 60px;           /* قبل كانت -210px */
     top: 50%;
     transform: translateY(-50%);
 }
 
 .machine img {
-    width: 260px; /* تصغير الماكينة بنسبة واضحة */
+    width: 260px;          /* حجم مناسب ومتناسق */
     filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.25));
 }
 
+/* في الشاشات الصغيرة نخفي الماكينة */
 @media (max-width: 900px) {
     .machine { display: none; }
     .container { width: 90%; }
@@ -112,14 +113,14 @@ body {
 <div class="container">
 
     <div class="logo">
-        <img src="logo.png">
+        <img src="logo.png" alt="Raseedk Logo">
     </div>
 
     <div class="title">رصيدك – مندوب براك الشاطئ</div>
 
     <div class="desc">
-        فعّل خدمتك، احصل على جهازك، واستمتع بخدمات شحن يومية ودعم فني متواصل،  
-        ووفّر لزبائنك كروتًا محلية ودولية بجميع فئاتها بطريقة احترافية…  
+        فعّل خدمتك، احصل على جهازك، واستمتع بخدمات شحن يومية ودعم فني متواصل،
+        ووفّر لزبائنك كروتًا محلية ودولية بجميع فئاتها بطريقة احترافية…
         عبر مندوب رصيدك داخل براك الشاطئ.
     </div>
 
@@ -135,7 +136,7 @@ body {
 
 <!-- الماكينة -->
 <div class="machine">
-    <img src="machine.png">
+    <img src="machine.png" alt="SUNMI Device">
 </div>
 
 </body>
