@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رصيدك – مندوب براك الشاطئ</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #0a0f3f 0%, #1d275e 100%);
+
+            /* 🎨 خلفية جديدة واضحة جداً */
+            background: linear-gradient(135deg, #4a057a 0%, #0a0f3e 100%);
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,66 +27,72 @@
         }
 
         .box {
-            background: white;
-            width: 440px;
-            padding: 40px;
-            border-radius: 20px;
+            background: #FFF;
+            width: 460px;
+            padding: 45px;
+            border-radius: 26px;
+
+            /* ✨ إطار واضح */
+            border: 3px solid #ececec;
+
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.22);
-            animation: fadeIn 0.7s ease-out;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
             position: relative;
             z-index: 2;
+
+            animation: fadeIn 0.8s ease-out;
         }
 
         @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(10px);}
-            to   {opacity: 1; transform: translateY(0);}
+            from { opacity: 0; transform: translateY(15px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
+        /* 📱 الجهاز بعيد بشكل واضح */
         .device {
             position: absolute;
-            right: -310px;
-            top: 52%;
-            transform: translateY(-50%) rotate(-5deg);
-            width: 360px;
+            right: -360px;     /* ← أبعدها 100% */
+            top: 50%;
+            transform: translateY(-50%) rotate(-4deg);
+            width: 380px;
+
             opacity: 0;
-            animation: slideIn 0.9s ease-out forwards;
+            animation: slideIn 1.1s ease-out forwards;
         }
 
         @keyframes slideIn {
-            from {opacity: 0; transform: translateY(-50%) translateX(60px) rotate(-5deg);}
-            to   {opacity: 1; transform: translateY(-50%) rotate(-5deg);}
+            from { opacity: 0; transform: translateY(-50%) translateX(80px) rotate(-4deg); }
+            to   { opacity: 1; transform: translateY(-50%) rotate(-4deg); }
         }
 
+        /* 📌 الشعار أكبر بوضوح */
         img.logo {
-            width: 230px;
+            width: 280px;
             margin-bottom: 25px;
-            animation: fadeIn 1s ease-out;
         }
 
         h2 {
-            margin-top: 0;
             margin-bottom: 12px;
             color: #010536;
-            font-size: 23px;
+            font-size: 26px;
             font-weight: 700;
         }
 
         p {
-            font-size: 15px;
             color: #333;
-            margin-bottom: 28px;
+            font-size: 16px;
             line-height: 1.8;
+            margin-bottom: 32px;
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 15px;
+            padding: 16px;
             border-radius: 50px;
             margin-bottom: 14px;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 700;
             text-decoration: none;
             transition: 0.2s;
         }
@@ -92,19 +102,21 @@
         .req-btn { background-color: #B14593; color: white; }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         }
 
         footer {
-            margin-top: 20px;
-            font-size: 12px;
+            margin-top: 18px;
+            font-size: 13px;
             color: #777;
         }
 
+        /* نسخة الموبايل */
         @media (max-width: 700px) {
             .device { display: none; }
             body { padding: 10px; }
+            .box { width: 90%; }
         }
     </style>
 </head>
@@ -121,16 +133,17 @@
             <h2>رصيدك – مندوب براك الشاطئ</h2>
 
             <p>
-                الخدمة الرسمية لتفعيل رصيدك وتوفير أجهزة SUNMI وخدمات الشحن اليومي
+                الخدمة الرسمية لتفعيل رصيدك وتوفير أجهزة SUNMI وخدمات الشحن اليومي،
                 مع متابعة مستمرة ودعم فني للمحال التجارية داخل براك الشاطئ.
             </p>
 
-            <a class="btn fb-btn" href="#">زيارة صفحة فيسبوك</a>
-            <a class="btn wa-btn" href="#">التواصل عبر واتساب</a>
-            <a class="btn req-btn" href="#">طلب ماكينة SUNMI</a>
+            <a class="btn fb-btn">زيارة صفحة فيسبوك</a>
+            <a class="btn wa-btn">التواصل عبر واتساب</a>
+            <a class="btn req-btn">طلب ماكينة SUNMI</a>
 
             <footer>© رصيدك – Ersal Telecom 2025</footer>
         </div>
+
     </div>
 
 </body>
