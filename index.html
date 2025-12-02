@@ -3,88 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رصيدك – براك الشاطئ</title>
+    <title>رصيدك – مندوب براك الشاطئ</title>
+
+    <!-- خط عربي -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            padding: 0;
-            background: #0c1035; /* الأزرق الداكن القريب من هوية رصيدك */
-            font-family: "Tajawal", Arial, sans-serif;
-            color: #fff;
-            text-align: center;
-            direction: rtl;
+            font-family: 'Cairo', sans-serif;
+            background-color: #010536;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
-            margin: 80px auto;
-            background: #ffffff;
-            width: 90%;
-            max-width: 480px;
-            padding: 40px 30px;
+            position: relative;
+        }
+
+        .box {
+            background: white;
+            width: 420px;
+            padding: 35px;
             border-radius: 18px;
-            color: #000842; /* لون الهوية */
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+            animation: fadeIn 0.7s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(10px);}
+            to   {opacity: 1; transform: translateY(0);}
+        }
+
+        /* الجهاز على اليمين */
+        .device {
+            position: absolute;
+            right: -260px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-5deg);
+            width: 340px;
+            opacity: 0;
+            animation: slideIn 0.9s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {opacity: 0; transform: translateY(-50%) translateX(40px) rotate(-5deg);}
+            to   {opacity: 1; transform: translateY(-50%) rotate(-5deg);}
         }
 
         img.logo {
             width: 180px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        h1 {
+        h2 {
             margin-top: 0;
-            font-size: 26px;
-            font-weight: bold;
+            margin-bottom: 10px;
+            color: #010536;
+            font-weight: 700;
         }
 
         p {
-            font-size: 16px;
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 30px;
             line-height: 1.7;
-            margin-bottom: 28px;
         }
 
         .btn {
             display: block;
-            margin: 12px auto;
-            padding: 14px 20px;
-            width: 80%;
-            border-radius: 30px;
+            width: 100%;
+            padding: 13px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: bold;
-            color: #000842;
-            background: #f1f10d; /* الأصفر */
+            color: #010536;
             transition: 0.2s;
         }
 
-        .btn:hover {
-            background: #ffff33;
+        .fb-btn { background-color: #F1F10D; }
+        .wa-btn { background-color: #48C4DD; color: #010536; }
+        .req-btn { background-color: #B14593; color: white; }
+
+        footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #777;
         }
 
-        .wa {
-            background: #25D366;
-            color: white;
-        }
-
-        .wa:hover {
-            background: #1ebe58;
+        /* تعديلات للجوال */
+        @media (max-width: 600px) {
+            .device {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
-        <!-- رابط الشعار الرسمي الذي رفعته -->
-        <img class="logo" src="https://raw.githubusercontent.com/aliqadheernah-coder/Raseedk-Brak/main/logo.png" alt="Raseedk Logo">
 
-        <h1>رصيدك – براك الشاطئ</h1>
+        <img class="device" src="https://raw.githubusercontent.com/aliqadheemah-coder/Raseedk-Brak/main/device.png">
 
-        <p>
-            الخدمة الرسمية لتفعيل رصيدك وتوفير أجهزة SUNMI وخدمات الشحن اليومي، 
-            مع متابعة مستمرة ودعم فني للمحال التجارية داخل نطاق براك الشاطئ.
-        </p>
+        <div class="box">
+            <img class="logo" src="https://raw.githubusercontent.com/aliqadheemah-coder/Raseedk-Brak/main/logo.png">
 
-        <a class="btn" href="https://www.facebook.com" target="_blank">زيارة صفحة فيسبوك</a>
-        <a class="btn wa" href="https://wa.me/218917231348" target="_blank">التواصل عبر واتساب</a>
+            <h2>رصيدك – مندوب براك الشاطئ</h2>
+
+            <p>
+                الخدمة الرسمية لتفعيل رصيدك وتوفير أجهزة SUNMI وخدمات الشحن اليومي
+                مع متابعة مستمرة ودعم فني للمحال التجارية داخل براك الشاطئ.
+            </p>
+
+            <a class="btn fb-btn" href="#" target="_blank">زيارة صفحة فيسبوك</a>
+            <a class="btn wa-btn" href="#" target="_blank">التواصل عبر واتساب</a>
+            <a class="btn req-btn" href="#" target="_blank">طلب ماكينة SUNMI</a>
+
+            <footer>© رصيدك – Ersal Telecom 2025</footer>
+        </div>
     </div>
 
 </body>
