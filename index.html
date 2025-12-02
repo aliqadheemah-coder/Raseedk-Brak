@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رصيدك – مندوب براك الشاطئ</title>
-
-    <!-- خط عربي -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             font-family: 'Cairo', sans-serif;
-            background-color: #010536;
+            background: linear-gradient(135deg, #0a0f3f 0%, #1d275e 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,11 +24,11 @@
 
         .box {
             background: white;
-            width: 420px;
-            padding: 35px;
-            border-radius: 18px;
+            width: 440px;
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.22);
             animation: fadeIn 0.7s ease-out;
             position: relative;
             z-index: 2;
@@ -41,69 +39,72 @@
             to   {opacity: 1; transform: translateY(0);}
         }
 
-        /* الجهاز على اليمين */
         .device {
             position: absolute;
-            right: -260px;
-            top: 50%;
+            right: -310px;
+            top: 52%;
             transform: translateY(-50%) rotate(-5deg);
-            width: 340px;
+            width: 360px;
             opacity: 0;
             animation: slideIn 0.9s ease-out forwards;
         }
 
         @keyframes slideIn {
-            from {opacity: 0; transform: translateY(-50%) translateX(40px) rotate(-5deg);}
+            from {opacity: 0; transform: translateY(-50%) translateX(60px) rotate(-5deg);}
             to   {opacity: 1; transform: translateY(-50%) rotate(-5deg);}
         }
 
         img.logo {
-            width: 180px;
-            margin-bottom: 20px;
+            width: 230px;
+            margin-bottom: 25px;
+            animation: fadeIn 1s ease-out;
         }
 
         h2 {
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #010536;
+            font-size: 23px;
             font-weight: 700;
         }
 
         p {
             font-size: 15px;
             color: #333;
-            margin-bottom: 30px;
-            line-height: 1.7;
+            margin-bottom: 28px;
+            line-height: 1.8;
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 13px;
+            padding: 15px;
             border-radius: 50px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             font-size: 16px;
             font-weight: 600;
             text-decoration: none;
-            color: #010536;
             transition: 0.2s;
         }
 
-        .fb-btn { background-color: #F1F10D; }
+        .fb-btn { background-color: #F1F10D; color: #010536; }
         .wa-btn { background-color: #48C4DD; color: #010536; }
         .req-btn { background-color: #B14593; color: white; }
 
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
         footer {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 12px;
             color: #777;
         }
 
-        /* تعديلات للجوال */
-        @media (max-width: 600px) {
-            .device {
-                display: none;
-            }
+        @media (max-width: 700px) {
+            .device { display: none; }
+            body { padding: 10px; }
         }
     </style>
 </head>
@@ -124,9 +125,9 @@
                 مع متابعة مستمرة ودعم فني للمحال التجارية داخل براك الشاطئ.
             </p>
 
-            <a class="btn fb-btn" href="#" target="_blank">زيارة صفحة فيسبوك</a>
-            <a class="btn wa-btn" href="#" target="_blank">التواصل عبر واتساب</a>
-            <a class="btn req-btn" href="#" target="_blank">طلب ماكينة SUNMI</a>
+            <a class="btn fb-btn" href="#">زيارة صفحة فيسبوك</a>
+            <a class="btn wa-btn" href="#">التواصل عبر واتساب</a>
+            <a class="btn req-btn" href="#">طلب ماكينة SUNMI</a>
 
             <footer>© رصيدك – Ersal Telecom 2025</footer>
         </div>
