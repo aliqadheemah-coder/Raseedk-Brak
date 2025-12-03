@@ -15,17 +15,17 @@ body {
     overflow-x: hidden;
 }
 
-/* الماكينة – نزول + اقتراب لليمين */
+/* الماكينة */
 .machine {
     position: absolute;
-    left: 115px;      /* ← اقتراب بسيط */
-    top: 54%;         /* ← نزول 4% */
+    left: 115px;        /* مكان مضبوط قريب من المربع */
+    top: 54%;           /* نزول بسيط باش تولّي موزونة */
     transform: translateY(-50%);
     z-index: 4;
 }
 
 .machine img {
-    width: 350px;    
+    width: 350px;       /* حجم ملائم */
     filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.30));
 }
 
@@ -42,10 +42,10 @@ body {
     z-index: 10;
 }
 
-/* الشعار – تكبير + نزول */
+/* الشعار */
 .logo {
-    width: 245px;         /* ← زيادة الحجم */
-    margin-bottom: 5px;   /* ← نزول بسيط */
+    width: 245px;      
+    margin-bottom: 5px;
 }
 
 /* العنوان */
@@ -81,7 +81,7 @@ body {
 .btn-blue   { background: #40c4e7; color:#fff; }
 .btn-pink   { background: #c44b9e; color:#fff; }
 
-/* إخفاء الماكينة للشاشات الصغيرة */
+/* إخفاء الماكينة على الموبايل */
 @media(max-width: 900px) {
     .machine { display:none; }
 }
@@ -91,12 +91,12 @@ body {
 
 <body>
 
-<!-- الماكينة -->
+<!-- صورة الماكينة -->
 <div class="machine">
     <img src="machine.png" alt="SUNMI">
 </div>
 
-<!-- الكرت الرئيسي -->
+<!-- المربع الأبيض -->
 <div class="card">
 
     <img src="logo.png" class="logo">
@@ -109,9 +109,26 @@ body {
         عبر مندوب رصيدك داخل براك الشاطئ.
     </div>
 
-    <a href="#" class="btn btn-yellow">زيارة صفحة فيسبوك</a>
-    <a href="#" class="btn btn-blue">التواصل عبر واتساب</a>
-    <a href="#" class="btn btn-pink">طلب ماكينة SUNMI</a>
+    <!-- زر فيسبوك -->
+    <a class="btn btn-yellow" 
+       href="https://www.facebook.com/profile.php?id=61584032610287" 
+       target="_blank">
+       زيارة صفحة فيسبوك
+    </a>
+
+    <!-- زر واتساب -->
+    <a class="btn btn-blue" 
+       href="https://wa.me/218910373636?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D9%86%D8%A8%D9%8A%20%D9%86%D8%B3%D8%A3%D9%84%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%B1%D8%B5%D9%8A%D8%AF%D9%83%20%D8%AF%D8%A7%D8%AE%D9%84%20%D8%A8%D8%B1%D8%A7%D9%83%20%D8%A7%D9%84%D8%B4%D8%A7%D8%B7%D8%A6." 
+       target="_blank">
+       التواصل عبر واتساب
+    </a>
+
+    <!-- زر طلب ماكينة SUNMI -->
+    <a class="btn btn-pink" 
+       href="https://wa.me/218910373636?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D9%86%D8%A8%D9%8A%20%D9%86%D8%B3%D8%AC%D9%84%20%D9%84%D8%B7%D9%84%D8%A8%20%D9%85%D8%A7%D9%83%D9%8A%D9%86%D8%A9%20SUNMI%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9%20%D8%A8%D8%AE%D8%AF%D9%85%D8%A9%20%D8%B1%D8%B5%D9%8A%D8%AF%D9%83." 
+       target="_blank">
+       طلب ماكينة SUNMI
+    </a>
 
     <div style="font-size:13px; margin-top:15px; color:#666;">
         © رصيدك – Ersal Telecom 2025
