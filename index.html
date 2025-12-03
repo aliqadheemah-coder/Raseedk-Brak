@@ -15,17 +15,17 @@ body {
     overflow-x: hidden;
 }
 
-/* الماكينة – أكبر + أقرب للمربع */
+/* الماكينة – نزول + اقتراب لليمين */
 .machine {
     position: absolute;
-    left: 90px;       /* ← قربناها للمربع */
-    top: 50%;
+    left: 115px;      /* ← اقتراب بسيط */
+    top: 54%;         /* ← نزول 4% */
     transform: translateY(-50%);
-    z-index: 5;
+    z-index: 4;
 }
 
 .machine img {
-    width: 330px;     /* ← زودنا الحجم */
+    width: 350px;    
     filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.30));
 }
 
@@ -42,10 +42,10 @@ body {
     z-index: 10;
 }
 
-/* الشعار – أكبر + هبطناه */
+/* الشعار – تكبير + نزول */
 .logo {
-    width: 220px;       /* ← كبرناه */
-    margin-bottom: 10px; /* ← نزلناه شوية */
+    width: 245px;         /* ← زيادة الحجم */
+    margin-bottom: 5px;   /* ← نزول بسيط */
 }
 
 /* العنوان */
@@ -93,13 +93,13 @@ body {
 
 <!-- الماكينة -->
 <div class="machine">
-    <img src="machine.png?v=5" alt="SUNMI">
+    <img src="machine.png" alt="SUNMI">
 </div>
 
 <!-- الكرت الرئيسي -->
 <div class="card">
 
-    <img src="logo.png?v=5" class="logo">
+    <img src="logo.png" class="logo">
 
     <div class="title">رصيدك – مندوب براك الشاطئ</div>
 
