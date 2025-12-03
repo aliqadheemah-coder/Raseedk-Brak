@@ -15,6 +15,20 @@ body {
     overflow-x: hidden;
 }
 
+/* الماكينة – أكبر + أقرب للمربع */
+.machine {
+    position: absolute;
+    left: 90px;       /* ← قربناها للمربع */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.machine img {
+    width: 330px;     /* ← زودنا الحجم */
+    filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.30));
+}
+
 /* المربع الأبيض */
 .card {
     width: 420px;
@@ -28,10 +42,10 @@ body {
     z-index: 10;
 }
 
-/* الشعار */
+/* الشعار – أكبر + هبطناه */
 .logo {
-    width: 180px;
-    margin-bottom: 25px;
+    width: 220px;       /* ← كبرناه */
+    margin-bottom: 10px; /* ← نزلناه شوية */
 }
 
 /* العنوان */
@@ -67,21 +81,7 @@ body {
 .btn-blue   { background: #40c4e7; color:#fff; }
 .btn-pink   { background: #c44b9e; color:#fff; }
 
-/* الماكينة */
-.machine {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-}
-
-.machine img {
-    width: 250px;
-    filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.25));
-}
-
-/* إخفاء الماكينة في الشاشات الصغيرة */
+/* إخفاء الماكينة للشاشات الصغيرة */
 @media(max-width: 900px) {
     .machine { display:none; }
 }
@@ -93,19 +93,19 @@ body {
 
 <!-- الماكينة -->
 <div class="machine">
-    <img src="machine.png?v=4" alt="SUNMI">
+    <img src="machine.png?v=5" alt="SUNMI">
 </div>
 
 <!-- الكرت الرئيسي -->
 <div class="card">
 
-    <img src="logo.png?v=4" class="logo">
+    <img src="logo.png?v=5" class="logo">
 
     <div class="title">رصيدك – مندوب براك الشاطئ</div>
 
     <div class="desc">
-        فعّل خدمتك، احصل على جهازك، واستمتع بخدمات شحن يومية ودعم فني متواصل، 
-        ووفر لزبائنك كروتًا محلية ودولية بجميع فئاتها بطريقة احترافية… 
+        فعّل خدمتك، احصل على جهازك، واستمتع بخدمات شحن يومية ودعم فني متواصل،
+        ووفر لزبائنك كروتًا محلية ودولية بجميع فئاتها بطريقة احترافية…
         عبر مندوب رصيدك داخل براك الشاطئ.
     </div>
 
